@@ -19,8 +19,8 @@ jobs:
         
     - name: Vet
       run: |
-        go mod tidy
         go vet ./...
+        go mod tidy
       
     - name: Build
       run: go build -v ./...
