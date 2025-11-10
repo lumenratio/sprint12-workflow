@@ -15,18 +15,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-
-    - name: Set up Go
-      uses: actions/setup-go@v4
+    - uses: actions/setup-go@v4
       with:
         go-version: '1.24'
 
-    - name: Vet
-      run: |
-        go vet ./...
-      
     - name: Build
       run: go build -v ./...
 
+  tests:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-go@v4
+
     - name: Test
       run: go test -v ./...
+
+  goVetLint:
+    needs: [tests]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v4
+      - uses: golangci/golangci-lint-action@v3
+
+    - name: Vet
+      run: go vet ./...
+
