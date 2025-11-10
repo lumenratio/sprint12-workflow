@@ -18,7 +18,9 @@ jobs:
     - uses: actions/checkout@v4
         
     - name: Vet
-      run: go vet ./...
+      run: |
+        go mod tidy
+        go vet ./...
       
     - name: Build
       run: go build -v ./...
