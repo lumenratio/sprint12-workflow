@@ -2,6 +2,8 @@ module github.com/lumenratio/sprint12-workflow-parcel
 
 go 1.24
 
+toolchain go1.24.4
+
 require (
 	github.com/stretchr/testify v1.11.1
 	modernc.org/sqlite v1.40.0
