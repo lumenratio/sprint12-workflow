@@ -6,8 +6,12 @@ name: SPR12-Workflow
 on:
   push:
     branches: [ "devel" ]
+    paths:
+      - '**.go' 
   pull_request:
     branches: [ "main" ]
+    paths:
+      - '**.go'
 
 jobs:
   build:
