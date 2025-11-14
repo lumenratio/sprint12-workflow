@@ -5,7 +5,9 @@ name: SPR12-Workflow
 
 on:
   push:
-    branches: [ "devel" ]
+    branches: 
+      - "devel"
+      - "main"
     paths:
       - '**.go'
     tags:
