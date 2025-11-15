@@ -8,8 +8,6 @@ on:
     branches: 
       - "devel"
       - "main"
-    paths:
-      - '**.go'
     tags:
       - 'v*'
   pull_request:
