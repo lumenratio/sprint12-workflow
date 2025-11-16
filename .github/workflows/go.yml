@@ -11,10 +11,6 @@ on:
       - '**.go'
     tags:
       - 'v*'
-  pull_request:
-    branches: 
-      - main
-
 jobs:
   build:
     runs-on: ubuntu-latest
